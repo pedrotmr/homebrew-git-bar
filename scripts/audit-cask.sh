@@ -15,5 +15,6 @@ fi
 tap_dir=$(brew --repository "$tap")
 mkdir -p "$tap_dir/Casks"
 cp "$cask" "$tap_dir/$cask"
-brew audit --cask --strict --online --tap "$tap"
-brew style --cask "$tap"
+cask_token="${tap}/$(basename "${cask}" .rb)"
+brew audit --cask --strict --online "${cask_token}"
+brew style --cask "${cask_token}"
