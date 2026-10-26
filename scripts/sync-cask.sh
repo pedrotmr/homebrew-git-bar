@@ -86,8 +86,8 @@ for binary in "$app/Contents/MacOS/GitBar" \
   "$framework/Sparkle" \
   "$framework/Autoupdate" \
   "$framework/Updater.app/Contents/MacOS/Updater"; do
-  lipo -verify_arch arm64 "$binary"
-  lipo -verify_arch x86_64 "$binary"
+  lipo "$binary" -verify_arch arm64
+  lipo "$binary" -verify_arch x86_64
 done
 framework_root="$app/Contents/Frameworks/Sparkle.framework"
 for component in "$framework/Autoupdate" "$framework/Updater.app" "$framework_root"; do
