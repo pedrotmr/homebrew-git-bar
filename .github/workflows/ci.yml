@@ -13,10 +13,12 @@ jobs:
   audit:
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
-      - name: Validate sync script
-        run: bash -n scripts/sync-cask.sh scripts/audit-cask.sh
+      - name: Check audit script
+        run: bash -n scripts/audit-cask.sh
 
       - name: Audit the cask when a verified stable release exists
         run: scripts/audit-cask.sh
