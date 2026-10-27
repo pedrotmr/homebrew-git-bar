@@ -1,7 +1,35 @@
 # GitBar Homebrew tap
 
-This repository provides a Homebrew cask for [GitBar](https://github.com/pedrotmr/git-bar).
+This tap installs the latest stable version of [GitBar](https://github.com/pedrotmr/git-bar).
 
-There is no cask yet. The GitBar app repository will create it after it publishes a signed, notarized stable release. That workflow checks the release ZIP, computes its SHA-256, runs Homebrew's strict audit, and pushes the cask here. Drafts and prereleases do not change this tap.
+## Install
 
-The app repository stores the fine-grained token for this tap. This repository does not need a cross-repository secret. CI checks pull requests and pushes to `main`; it runs the Homebrew audit only when a cask exists.
+Use the full command:
+
+```sh
+brew install --cask pedrotmr/git-bar/pedrotmr-git-bar
+```
+
+Or add the tap once, then use its shorter cask name:
+
+```sh
+brew tap pedrotmr/git-bar
+brew install --cask pedrotmr-git-bar
+```
+
+## Update
+
+Homebrew manages updates for this copy. Run:
+
+```sh
+brew update
+brew upgrade
+```
+
+The tap follows stable releases. Drafts and prereleases are not installed.
+
+## Requirements
+
+- macOS 14.6 or later.
+- Git must be installed.
+- GitHub CLI is optional. Install it with `brew install gh`, then run `gh auth login` to use GitHub pull requests.
