@@ -79,5 +79,11 @@ if [[ "$source_path" != "$destination_path" ]]; then
   cp "$cask" "$tap_dir/$cask"
 fi
 brew trust --cask "$cask_token"
-brew audit --cask --strict --online "${cask_token}"
+brew_audit_options=(--cask --strict)
+if [[ -n "${HOMEBREW_GITHUB_API_TOKEN:-}" ]]; then
+  brew_audit_options+=(--online)
+else
+  echo "Running strict offline audit; authenticated trusted runs also check remote URLs."
+fi
+brew audit "${brew_audit_options[@]}" "$cask_token"
 brew style --cask "${cask_token}"
