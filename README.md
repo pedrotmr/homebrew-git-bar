@@ -23,10 +23,14 @@ To update only GitBar, run:
 
 ```sh
 brew update
-brew upgrade --cask pedrotmr/git-bar/pedrotmr-git-bar
+brew upgrade --cask --greedy-auto-updates pedrotmr/git-bar/pedrotmr-git-bar
 ```
 
 The tap follows stable releases. Drafts and prereleases are not installed.
+
+## Direct download
+
+Download the DMG or ZIP from the [latest stable release](https://github.com/pedrotmr/git-bar/releases/latest). Direct installs can update with **Check for Updates…** in GitBar. See the [app install guide](https://github.com/pedrotmr/git-bar#install-and-update).
 
 ## Requirements
 
