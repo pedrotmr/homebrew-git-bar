@@ -1,6 +1,6 @@
 cask "pedrotmr-git-bar" do
-  version "0.2.0"
-  sha256 "bc356b7666a7d7a7ff6df025db95afbc640ccc354670e63dd706e8d8afbf4707"
+  version "0.2.1"
+  sha256 "2c6e7f0e5fa32d98e70b192678ab334dc7bcbb22ebe5797d793f0eb72e05b5af"
 
   url "https://github.com/pedrotmr/git-bar/releases/download/v#{version}/GitBar-#{version}.zip"
   name "GitBar"
@@ -48,7 +48,7 @@ cask "pedrotmr-git-bar" do
           "com.GitBar.app.homebrew",
           "managedByHomebrewVersion",
           "-string",
-          "0.2.0",
+          "0.2.1",
         ],
         writable_paths: ["Library/Preferences"],
         writable_base:  :home
