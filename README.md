@@ -19,11 +19,11 @@ brew install --cask pedrotmr-git-bar
 
 ## Update
 
-Homebrew manages updates for this copy. Run:
+To update only GitBar, run:
 
 ```sh
 brew update
-brew upgrade
+brew upgrade --cask pedrotmr/git-bar/pedrotmr-git-bar
 ```
 
 The tap follows stable releases. Drafts and prereleases are not installed.
