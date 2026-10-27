@@ -1,39 +1,47 @@
-# GitBar Homebrew tap
+# 🍺 Homebrew tap for GitBar
 
-This tap installs the latest stable version of [GitBar](https://github.com/pedrotmr/git-bar).
+Install the latest stable version of [GitBar](https://github.com/pedrotmr/git-bar) with Homebrew.
 
-## Install
+## 📦 Install
 
-Use the full command:
+### Full command
 
 ```sh
 brew install --cask pedrotmr/git-bar/pedrotmr-git-bar
 ```
 
-Or add the tap once, then use its shorter cask name:
+### Tap once, then use the short command
 
 ```sh
 brew tap pedrotmr/git-bar
 brew install --cask pedrotmr-git-bar
 ```
 
-## Update
+## 🔄 Update
 
-To update only GitBar, run:
+To update only GitBar:
 
 ```sh
 brew update
 brew upgrade --cask --greedy-auto-updates pedrotmr/git-bar/pedrotmr-git-bar
 ```
 
-The tap follows stable releases. Drafts and prereleases are not installed.
+This tap follows stable releases. Drafts and prereleases are not installed.
 
-## Direct download
+## ⬇️ Direct download
 
-Download the DMG or ZIP from the [latest stable release](https://github.com/pedrotmr/git-bar/releases/latest). Direct installs can update with **Check for Updates…** in GitBar. See the [app install guide](https://github.com/pedrotmr/git-bar#install-and-update).
+1. Download the latest stable [DMG or ZIP](https://github.com/pedrotmr/git-bar/releases/latest).
+2. Open the DMG or extract the ZIP.
+3. Move `GitBar.app` to Applications.
 
-## Requirements
+To update a direct download, choose **Check for Updates…** in GitBar. Version 0.2.0 was the first Sparkle release. For a predictable upgrade from v0.1.x, install the current release manually once.
 
-- macOS 14.6 or later.
-- Git must be installed.
-- GitHub CLI is optional. Install it with `brew install gh`, then run `gh auth login` to use GitHub pull requests.
+## ⚙️ Requirements
+
+- macOS 14.6 or later and Git.
+- GitHub CLI is optional. Install it with `brew install gh` and run `gh auth login` to use pull requests.
+
+## Links
+
+- 🐛 [Report a problem](https://github.com/pedrotmr/git-bar/issues)
+- 📖 [GitBar README](https://github.com/pedrotmr/git-bar)
