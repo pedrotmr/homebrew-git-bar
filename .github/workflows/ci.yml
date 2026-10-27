@@ -1,0 +1,31 @@
+name: Tap checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check audit script
+        run: bash -n scripts/audit-cask.sh
+
+      - name: Audit cask on pull requests without a token
+        if: github.event_name == 'pull_request'
+        run: scripts/audit-cask.sh
+
+      - name: Audit cask on trusted events
+        if: github.event_name != 'pull_request'
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        run: scripts/audit-cask.sh
