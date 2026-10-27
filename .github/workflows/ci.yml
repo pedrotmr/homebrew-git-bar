@@ -20,7 +20,12 @@ jobs:
       - name: Check audit script
         run: bash -n scripts/audit-cask.sh
 
-      - name: Audit the cask when a verified stable release exists
+      - name: Audit cask on pull requests without a token
+        if: github.event_name == 'pull_request'
+        run: scripts/audit-cask.sh
+
+      - name: Audit cask on trusted events
+        if: github.event_name != 'pull_request'
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: scripts/audit-cask.sh
