@@ -18,8 +18,7 @@ brew install --cask pedrotmr-git-bar
 ## Update
 
 ```sh
-brew update
-brew upgrade --cask --greedy-auto-updates pedrotmr-git-bar
+brew upgrade --cask pedrotmr/git-bar/pedrotmr-git-bar
 ```
 
 ## Requirements
